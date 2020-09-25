@@ -43,7 +43,7 @@ cat << EOF > /v2ray.json
     "inbounds": 
     [
         {
-            "port": 4234,"listen": "127.0.0.1","protocol": "vless",
+            "port": 4234,"listen": "127.0.0.1","protocol": "vmess",
             "settings": {"clients": [{"id": "$UUID"}],"decryption": "none"},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$V2RAYPATH"}}
         }
@@ -54,7 +54,7 @@ EOF
 
 # start
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
-ss-server -s 127.0.0.1 -p 1234 -k $PASSWORD -m chacha20-ietf-poly1305 --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=/sspath" &
+ss-server -s 127.0.0.1 -p 1234 -k $PASSWORD -m chacha20-ietf-poly1305 &
 gost -L ss+ws://AEAD_CHACHA20_POLY1305:$PASSWORD@127.0.0.1:2234?path=/gostpath &
 brook wsserver -l 127.0.0.1:3234 --path /brookpath -p $PASSWORD &
 /v2ray -config /v2ray.json
