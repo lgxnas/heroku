@@ -1,8 +1,6 @@
-> 提醒： 滥用可能导致账户被BAN！！！
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/heroku)  
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/lgxnas/heroku)  
   
-* 本项目把V2ray，Shadowsocks，Gost，Brook四种代理工具同时部署到heroku空间，方便客户端各取所需！[Telegram讨论群](https://t.me/starts_sh_group)
+* 本项目把V2ray，Shadowsocks，Gost，Brook四种代理工具同时部署到heroku空间
 
 ### 服务端部署
 
@@ -12,9 +10,9 @@
 
 下载客户端，比如Windows v2rayN：https://github.com/2dust/v2rayN/releases
 
-选择代理协议 VLESS，然后配置如下：
+选择代理协议 VMESS，然后配置如下：
 
-代理协议：VLESS
+代理协议：VMESS
 
 * 地址：v2ray.herokuapp.com  //填写heroku生成的域名
 * 端口：443
@@ -29,18 +27,18 @@
 
 ### Shadowsocks客户端使用
 
-首先下载 v2ray-plugin 插件到电脑，下载解压后移动到常用文件夹，记住插件所在文件夹路径，待会会用到。
+~~首先下载 v2ray-plugin 插件到电脑，下载解压后移动到常用文件夹，记住插件所在文件夹路径，待会会用到。~~
 
-v2ray-plugin 插件下载页：https://github.com/shadowsocks/v2ray-plugin/releases
+~~v2ray-plugin 插件下载页：https://github.com/shadowsocks/v2ray-plugin/releases~~
 
-然后，下载ss客户端，比如[Windows客户端](https://github.com/shadowsocks/shadowsocks-windows/releases/)，这个不多讲。配置如下：
+~~然后，~~下载ss客户端，比如[Windows客户端](https://github.com/shadowsocks/shadowsocks-windows/releases/)，这个不多讲。配置如下：
 
 * 服务器地址: shadowsocks-libev.herokuapp.com  //此处填写服务端生成的域名
 * 端口: 443
 * 密码：password
 * 加密：chacha20-ietf-poly1305
-* 插件程序：D:\APP\v2ray-plugin_windows_amd64.exe  //此处要填插件在电脑上的绝对路径
-* 插件选项: path=/sspath;host=shadowsocks-libev.herokuapp.com;tls //此处改成自己的域名和路径
+~~* 插件程序：D:\APP\v2ray-plugin_windows_amd64.exe  //此处要填插件在电脑上的绝对路径~~
+~~* 插件选项: path=/sspath;host=shadowsocks-libev.herokuapp.com;tls //此处改成自己的域名和路径~~
 
 ### Gost客户端使用
 
